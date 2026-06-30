@@ -1,0 +1,16 @@
+name: auth
+status: draft
+mode: proposal-first
+summary: "Allow users to sign in with email and password."
+scope:
+  - 0_app/1_features/2_auth
+approval:
+  required: true
+implementation:
+  allowed: false
+  code_paths:
+    - 0_app/1_features/2_auth/3_backend
+    - 0_app/1_features/2_auth/4_frontend
+    - 0_app/1_features/2_auth/5_tests
+harness:
+  enabled: true

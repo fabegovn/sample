@@ -1,0 +1,28 @@
+models:
+  planner:
+    provider: openai
+    name: gpt-5
+  coder:
+    provider: openai
+    name: gpt-5-mini
+
+tools:
+  read_file: true
+  edit_file: true
+  search_file: true
+  bash: true
+  git: true
+
+permissions:
+  allowed_roots:
+    - 0_agent
+    - 0_app
+    - 0_harness
+    - 0_tests
+  denied_roots: []
+
+harness:
+  enabled: true
+  trace_dir: artifacts/traces
+  report_dir: artifacts/reports
+  failure_dir: artifacts/failures

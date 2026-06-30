@@ -17,7 +17,7 @@ The current shape is intentionally small:
 - Second-level child folders use `2_`.
 - Deeper levels continue increasing numerically.
 - Feature folders live under `0_app/1_features/2_<feature-name>/`.
-- Feature internals use the next numbers in sequence, for example `3_backend/`, `4_frontend/`, and `5_tests/`.
+- Feature internals use the same feature number, for example `3_backend/`, `3_frontend/`, and `3_tests/`.
 
 ## Design Rules
 

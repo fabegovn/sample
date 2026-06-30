@@ -33,7 +33,7 @@
   - second-level child folders use `2_`
   - deeper levels continue increasing numerically
 - For features, create folders under `0_app/1_features/2_<feature-name>/`.
-- For feature internals, keep implementation folders numbered to match depth, for example `3_backend/`, `4_frontend/`, and `5_tests/`.
+- For feature internals, keep implementation folders numbered to match their shared depth, for example `3_backend/`, `3_frontend/`, and `3_tests/`.
 
 ## Repo Discovery
 

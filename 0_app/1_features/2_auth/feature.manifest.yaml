@@ -10,7 +10,7 @@ implementation:
   allowed: false
   code_paths:
     - 0_app/1_features/2_auth/3_backend
-    - 0_app/1_features/2_auth/4_frontend
-    - 0_app/1_features/2_auth/5_tests
+    - 0_app/1_features/2_auth/3_frontend
+    - 0_app/1_features/2_auth/3_tests
 harness:
   enabled: true

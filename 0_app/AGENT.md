@@ -2,7 +2,11 @@
 
 - This is the only place the agent should make product changes.
 - Do not edit product code until the feature proposal is approved.
+- For new product requests, propose the feature set and tech stack first, then wait for user confirmation before creating or updating feature proposal files.
 - For a new request, create or update the feature folder under `0_app/1_features/2_<feature-name>/` first.
+- Use `0_app/1_feature_templates/` as examples only; do not implement product behavior there.
+- When a request matches a template, copy and adapt it into `0_app/1_features/2_<feature-name>/`.
+- Every new or updated feature must list its frontend and backend routes in `feature.manifest.yaml`.
 - Keep folder names aligned with depth-based numbering:
   - `0_` at the top level
   - `1_` for first-level children
@@ -10,6 +14,7 @@
   - and so on
 - Use `0_app/1_shared/` for code that is genuinely shared across multiple features.
 - Keep `spec.md`, `acceptance.md`, `feature.manifest.yaml`, and feature-local `AGENT.md` beside the feature.
+- Keep route ownership in `feature.manifest.yaml` synchronized with implementation routes.
 - After approval, implement only within the approved feature scope.
 - If a change is truly cross-feature, introduce shared code only when reuse is real and obvious.
 - Add infrastructure folders only when a cross-feature boundary is real.

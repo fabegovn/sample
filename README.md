@@ -17,13 +17,17 @@ The current shape is intentionally small:
 - Second-level child folders use `2_`.
 - Deeper levels continue increasing numerically.
 - Feature folders live under `0_app/1_features/2_<feature-name>/`.
+- Feature templates live under `0_app/1_feature_templates/2_<template-name>/`.
 - Feature internals use the same feature number, for example `3_backend/`, `3_frontend/`, and `3_tests/`.
 
 ## Design Rules
 
 - Keep the runtime small and predictable.
+- For new problem requests, have the agent propose suitable features and tech stack for user review before writing proposal files or implementation code.
+- Use `0_app/1_feature_templates/` only as reference material; real product features still belong under `0_app/1_features/`.
 - Keep feature instructions next to the feature.
 - Keep evaluation data separate from production code.
+- Add regression coverage whenever a bug is found during a run, so the same failure is caught next time.
 - Prefer one module per concern until the concern grows enough to justify splitting.
 - Keep configuration in one root file until the settings become genuinely hard to navigate.
 
@@ -31,12 +35,13 @@ The current shape is intentionally small:
 
 1. Read the root [AGENT.md](AGENT.md) first, then the closest folder-specific `AGENT.md`.
 2. Put product changes under `0_app/`, ideally inside a feature folder such as `0_app/1_features/2_auth/`.
-3. Describe the feature in `spec.md`, `acceptance.md`, and `feature.manifest.yaml`.
-4. Use `0_app/1_shared/` for reusable UI, utilities, or types that are truly cross-feature.
-5. Add or update a harness scenario in `0_harness/1_scenarios/` when you want a reproducible run.
-6. Store stable eval inputs and goldens in `0_harness/1_fixtures/`, with level-2 subfolders such as `2_expected/`, `2_inputs/`, and `2_screenshots/`.
-7. Keep runtime settings in `config.yaml` instead of scattering them across multiple files.
-8. Put fast safety checks in `0_tests/` so the agent and harness plumbing stays honest.
+3. Use templates such as `0_app/1_feature_templates/2_auth/` only to shape proposals; copy and adapt them into `0_app/1_features/2_<feature-name>/` after user confirmation.
+4. Describe the feature in `spec.md`, `acceptance.md`, and `feature.manifest.yaml`.
+5. Use `0_app/1_shared/` for reusable UI, utilities, or types that are truly cross-feature.
+6. Add or update a harness scenario in `0_harness/1_scenarios/` when you want a reproducible run.
+7. Store stable eval inputs and goldens in `0_harness/1_fixtures/`, with level-2 subfolders such as `2_expected/`, `2_inputs/`, and `2_screenshots/`.
+8. Keep runtime settings in `config.yaml` instead of scattering them across multiple files.
+9. Put fast safety checks in `0_tests/` so the agent and harness plumbing stays honest.
 
 ## Runtime Artifacts
 

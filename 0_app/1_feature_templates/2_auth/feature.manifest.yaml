@@ -1,0 +1,30 @@
+name: auth
+status: example
+template: true
+mode: proposal-first
+summary: "Example auth feature proposal for email/password sign in."
+scope:
+  - 0_app/1_feature_templates/2_auth
+template_usage:
+  copy_to: 0_app/1_features/2_auth
+  note: "Use this as proposal guidance only; adapt paths, routes, and acceptance criteria for the real project."
+approval:
+  required: true
+implementation:
+  allowed: false
+  code_paths:
+    - 0_app/1_feature_templates/2_auth/3_backend
+    - 0_app/1_feature_templates/2_auth/3_frontend
+    - 0_app/1_feature_templates/2_auth/3_tests
+routes:
+  frontend:
+    - path: /login
+      purpose: sign_in_page
+      entry: 0_app/1_feature_templates/2_auth/3_frontend
+  backend:
+    - method: POST
+      path: /api/auth/login
+      purpose: submit_credentials
+      handler: 0_app/1_feature_templates/2_auth/3_backend
+harness:
+  enabled: true
